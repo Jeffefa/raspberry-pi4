@@ -1,0 +1,50 @@
+# ==========================================
+# ARQUIVO DE ALIASES DO UNIX (.myAlias)
+# ==========================================
+# - Copie o conteudo desse arquivo para um ~/.bash_aliases na pasta root do terminal
+# - Abra o arquivo de configuracao do terminal: ~/.bashrc ou ~/.zshrc
+# - Adicione a linha que aponte para esse arquivo criado e salve
+
+
+# Atalhos de sistema e manutenção
+alias b='cd ..'
+alias gohome='cd ~'
+alias c='clear'
+alias clean_cache='rm -rf ~/.zsh_history_tmp; rm -rf ~/Library/Caches/*; echo "Cache de usuario limpo parcialmente!"'
+alias dotfiles='vim ~/.zshrc'
+
+alias l='ls -l'
+alias ll='ls -lahGF'
+alias lf='ls -lR'
+alias la='ls -la'
+alias myAlias='less ~/.bash_aliases'
+
+alias ps='ps aux | grep -v grep'
+alias update='sudo apt update && sudo apt upgrade -y'
+alias pi-temp='vcgencmd measure_temp' 
+
+
+# Atalhos rápidos para o Docker e Docker Compose
+alias dk='docker'
+alias dkc='docker compose'
+alias dkup='docker compose up -d'
+alias dkdown='docker compose down'
+alias dkps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
+alias dklog='docker logs -f --tail=100'
+
+
+# Atalhos para Git 
+alias g='git'
+alias gb='git branch'
+alias gs='git status -sb'
+alias gk='git checkout '
+alias gp='git pull'
+alias gf='git fetch'
+alias gac='git add . && git commit -m'
+
+
+# Atalhos para IP and Rede
+alias ip='ifconfig | grep "inet "'
+alias myip='ip -c link show eth0 && ip -c a show eth0 | grep inet'
+alias myipall='ip -c a'
+alias localip='hostname -I | awk "{print \$1}"'

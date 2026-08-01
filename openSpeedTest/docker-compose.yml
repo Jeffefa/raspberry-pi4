@@ -1,0 +1,11 @@
+services:
+  openSpeedTest:
+    image: openspeedtest/latest
+    build: .
+    container_name: openspeedtest
+    env_file:
+      - ../.env
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    restart: unless-stopped

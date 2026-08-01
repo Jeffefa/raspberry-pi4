@@ -1,0 +1,40 @@
+# ========================================================
+# ARQUIVO GIT PARA IGNORAR ARQUIVOS E PASTAS  (.gitignore)
+# ========================================================
+# .gitignore
+
+# Globais
+.env
+*.env
+*.log
+.DS_Store
+Thumbs.db
+
+*.log
+*.log.*
+*.lock
+
+# Pi-hole
+piHole/etc-pihole/
+piHole/etc-dnsmasq.d/
+piHole/data/
+
+# Postgres
+**/data/
+postgresDb/data/
+
+# HomeAssistant
+homeAssistant/.storage/
+homeAssistant/.cache/
+homeAssistant/*.db
+homeAssistant/*.log
+homeAssistant/.HA_VERSION
+homeAssistant/ts_cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.pytest_cache/

@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: postgres-home
+    env_file:
+      - ../.env
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATASET}
+    volumes:
+      - /home/jeffefa/Apps/postgresDB/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - home-network
+
+networks:
+  home-network:
+    name: home-network
+    driver: bridge
+

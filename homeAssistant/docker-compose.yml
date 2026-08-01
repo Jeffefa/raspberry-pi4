@@ -1,0 +1,19 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    env_file:
+      - ../.env
+    volumes:
+      - /home/jeffefa/Apps/homeAssistant:/config
+      - /etc/localtime:/etc/localtime:ro
+      - /run/dbus:/run/dbus:ro
+    restart: unless-stopped
+    privileged: true
+    network_mode: host
+    environment:
+      TZ: Europe/Lisbon
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+
