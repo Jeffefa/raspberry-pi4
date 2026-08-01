@@ -31,6 +31,7 @@ alias dkup='docker compose up -d'
 alias dkdown='docker compose down'
 alias dkps='docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"'
 alias dklog='docker logs -f --tail=100'
+alias dkupd='docker compose up'
 
 
 # Atalhos para Git 
